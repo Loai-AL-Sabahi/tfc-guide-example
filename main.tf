@@ -30,11 +30,11 @@ resource "aws_instance" "ubuntu" {
   }
 }
 
-resource "aws-loai-bucket" "loai" {
-  bucket = "loai_bucket"
+resource "aws_s3_bucket" "loai" {
+  bucket = "loai-bucket"
 
   tags = {
-    Name        = "loai"
+    Name        = "Loai bucket"
     Environment = "Dev"
   }
 }
