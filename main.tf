@@ -30,7 +30,7 @@ resource "aws_instance" "ubuntu" {
   }
 }
 
-resource "aws_s3_bucket" "loai" {
+resource "aws_loai_bucket" "loai" {
   bucket = "loai_bucket"
 
   tags = {
