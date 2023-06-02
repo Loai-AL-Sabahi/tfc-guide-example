@@ -29,33 +29,3 @@ resource "aws_instance" "ubuntu" {
     Name = var.instance_name
   }
 }
-
-resource "aws_s3_bucket" "loai" {
-  bucket = "loai-bucket"
-
-  tags = {
-    Name        = "Loai bucket"
-    Environment = "Dev"
-  }
-}
-
-resource "aws_dynamodb_table" "loai" {
-  name             = "loai"
-  hash_key         = "TestTableHashKey"
-  billing_mode     = "PAY_PER_REQUEST"
-  stream_enabled   = true
-  stream_view_type = "NEW_AND_OLD_IMAGES"
-
-  attribute {
-    name = "TestTableHashKey"
-    type = "S"
-  }
-
-  replica {
-    region_name = "us-east-2"
-  }
-
-  replica {
-    region_name = "us-west-2"
-  }
-}
