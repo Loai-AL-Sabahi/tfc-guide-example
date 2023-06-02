@@ -30,11 +30,11 @@ resource "aws_instance" "ubuntu" {
   }
 }
 
-resource "aws_s3_bucket" "example" {
-  bucket = "my-tf-test-bucket"
+resource "aws_s3_bucket" "loai" {
+  bucket = "loai_bucket"
 
   tags = {
-    Name        = "My bucket"
+    Name        = "loai"
     Environment = "Dev"
   }
 }
